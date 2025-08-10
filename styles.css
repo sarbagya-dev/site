@@ -1,0 +1,78 @@
+:root{
+  --bg: #ffffff;
+  --text: #1a1f2b;
+  --muted:#6b7280;
+  --brand:#1F618D;
+  --brand-ink:#173f5f;
+  --card:#f7f9fb;
+  --alt:#f4f6f8;
+  --border:#e5e7eb;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b0f14;
+    --text:#e9edf3;
+    --muted:#9aa4b2;
+    --card:#121821;
+    --alt:#0e141c;
+    --border:#1f2a37;
+  }
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif}
+img{max-width:100%;height:auto}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;background:#fff;color:#000;padding:.5rem .75rem;z-index:1000}
+
+.site-header{border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:1100px;margin:0 auto;padding:1rem}
+.brand{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;color:var(--text)}
+.brand-mark{filter: drop-shadow(0 1px 0 rgba(0,0,0,.05));}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);padding:.25rem .5rem;border-radius:.5rem;color:var(--text)}
+.navmenu{display:flex;gap:1rem;align-items:center;list-style:none;margin:0;padding:0}
+.navmenu .btn{margin-left:.5rem}
+
+.hero{max-width:1100px;margin:0 auto;padding:4rem 1rem 3rem}
+.hero h1{font-size:clamp(1.8rem, 4vw, 2.6rem);line-height:1.2;margin:0 0 1rem}
+.hero p{max-width:60ch;margin:0 0 1.5rem;color:var(--muted)}
+.hero-ctas{display:flex;gap:.75rem;flex-wrap:wrap}
+
+.section{max-width:1100px;margin:0 auto;padding:3rem 1rem}
+.section.alt{background:var(--alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+
+.grid{display:grid;gap:1rem}
+.cards{grid-template-columns:repeat(4,1fr)}
+@media (max-width:1000px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.cards{grid-template-columns:1fr}}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1rem;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.card h3{margin:.25rem 0 .5rem}
+.card p{color:var(--muted)}
+.card ul{margin:.5rem 0 0 1rem}
+
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media (max-width:900px){.work-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.work-grid{grid-template-columns:1fr}}
+.work{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1rem}
+.work .meta{color:var(--muted);font-size:.9rem}
+.work .kpis{display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0 0}
+.kpi{background:rgba(31,97,141,.07);border:1px dashed rgba(31,97,141,.3);padding:.25rem .5rem;border-radius:8px;font-size:.85rem}
+
+.badges{display:flex;gap:.5rem;flex-wrap:wrap;padding:0;margin:.5rem 0 0}
+.badges li{list-style:none;border:1px solid var(--border);background:var(--card);border-radius:999px;padding:.35rem .65rem;font-size:.9rem;color:var(--brand-ink)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border);background:transparent;border-radius:10px;padding:.5rem .9rem;font-weight:600}
+.btn:hover{text-decoration:none;box-shadow:0 1px 0 rgba(0,0,0,.05)}
+.btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
+.btn.ghost{background:transparent}
+.btn.small{font-size:.9rem;padding:.35rem .6rem;border-radius:8px}
+
+.note{color:var(--muted)}
+
+.site-footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center;color:var(--muted)}
+
+.consent{position:fixed;inset:auto 1rem 1rem 1rem;display:flex;gap:.5rem;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1rem;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
